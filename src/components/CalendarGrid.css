@@ -1,0 +1,141 @@
+.calendar-grid-wrap {
+  flex: 1;
+  padding: 1.25rem 1.5rem 1.5rem;
+  min-width: 0;
+}
+
+.day-headers {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.day-header {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  padding: 6px 0;
+}
+
+.day-header.weekend {
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.day-cell {
+  position: relative;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background var(--transition), border-color var(--transition), transform 0.1s ease;
+  user-select: none;
+  outline: none;
+}
+
+.day-cell:focus-visible {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent-glow);
+}
+
+.day-cell:hover:not(.other-month) {
+  background: var(--color-card-alt);
+  border-color: var(--color-border);
+}
+
+.day-cell:active:not(.other-month) {
+  transform: scale(0.93);
+}
+
+.day-number {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+/* States */
+.day-cell.other-month {
+  cursor: default;
+  pointer-events: none;
+}
+
+.day-cell.other-month .day-number {
+  color: var(--color-text-muted);
+  opacity: 0.4;
+}
+
+.day-cell.today .day-number {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.day-cell.today {
+  border-color: var(--color-today-ring);
+}
+
+.day-cell.range-start,
+.day-cell.range-end {
+  background: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+}
+
+.day-cell.range-start .day-number,
+.day-cell.range-end .day-number {
+  color: #0a1a0f !important;
+  font-weight: 500;
+}
+
+.day-cell.in-range {
+  background: var(--color-range);
+  border-color: var(--color-range-border);
+}
+
+.day-cell.in-range .day-number {
+  color: var(--color-accent);
+}
+
+/* Note indicator */
+.note-dot {
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.85;
+}
+
+.day-cell.range-start .note-dot,
+.day-cell.range-end .note-dot {
+  background: rgba(10,26,15,0.6);
+}
+
+@media (max-width: 420px) {
+  .calendar-grid-wrap {
+    padding: 1rem;
+  }
+  .day-number {
+    font-size: 12px;
+  }
+  .day-header {
+    font-size: 10px;
+  }
+}

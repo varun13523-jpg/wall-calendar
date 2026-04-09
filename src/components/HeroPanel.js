@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 //import React, { useMemo } from 'react';
+=======
+import React, { useMemo } from 'react';
+>>>>>>> ef6e045ba5cacf5f0d0315d1560e471919c693e0
 import './HeroPanel.css';
 
 const MONTHS = [

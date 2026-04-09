@@ -1,0 +1,96 @@
+/* ===== GLOBAL STYLES ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  /* Palette */
+  --color-bg: #0f1a14;
+  --color-surface: #162019;
+  --color-card: #1c2a20;
+  --color-card-alt: #1a271e;
+  --color-border: rgba(255,255,255,0.08);
+  --color-border-strong: rgba(255,255,255,0.14);
+
+  --color-text-primary: #e8f0ea;
+  --color-text-secondary: #8aab91;
+  --color-text-muted: #4e6653;
+
+  --color-accent: #4ade80;
+  --color-accent-dim: rgba(74,222,128,0.15);
+  --color-accent-dimmer: rgba(74,222,128,0.07);
+  --color-accent-glow: rgba(74,222,128,0.3);
+
+  --color-range: rgba(74,222,128,0.12);
+  --color-range-border: rgba(74,222,128,0.25);
+
+  --color-today-ring: rgba(74,222,128,0.5);
+
+  --color-danger: #f87171;
+  --color-danger-dim: rgba(248,113,113,0.12);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --shadow-card: 0 24px 60px rgba(0,0,0,0.5);
+  --shadow-hero: 0 4px 30px rgba(0,0,0,0.4);
+
+  --transition: 0.18s ease;
+}
+
+html, body {
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+textarea, input {
+  font-family: var(--font-body);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: var(--radius-full);
+}
+
+/* App root */
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1rem 4rem;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 0%, rgba(74,222,128,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 100%, rgba(74,222,128,0.03) 0%, transparent 60%),
+    var(--color-bg);
+}
